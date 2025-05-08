@@ -3,20 +3,6 @@ This college predictor application predicts college according to the marks or 
 Project: College Predictor
 This project aims to predict the most suitable college for a student based on their academic data (e.g., marks, entrance exam scores). The web app is built using Flask and integrates a trained machine learning model to provide predictions.
 
-File Structure:
-
-pgsql
-Copy
-Edit
-college_predictor/
-├── app.py                ← Flask app
-├── train_model.py        ← Script to train the machine learning model
-├── college_model.pkl     ← Trained machine learning model saved as a pickle file
-├── label_encoder.pkl     ← Label encoder for encoding categorical labels (e.g., college names) saved as a pickle file
-├── college_cutoff_data.csv ← CSV file containing historical data about college cutoffs for various courses
-├── templates/
-│   ├── index.html        ← Input form where users can enter their academic data for prediction
-│   └── result.html       ← Page to display the prediction result (which college the user is likely to get into)
 File Descriptions:
 app.py: This is the main Flask app that runs the web server and handles HTTP requests. It loads the trained model (college_model.pkl) and label encoder (label_encoder.pkl), processes user inputs through the web form, makes predictions using the trained model, and renders the result on the result.html page.
 
@@ -28,7 +14,8 @@ label_encoder.pkl: This file contains the label encoder that encodes categorical
 
 college_cutoff_data.csv: A CSV file that contains historical data about college cutoff scores for various courses. This data is used to train the model and to inform predictions about which colleges a student might get into based on their academic data.
 
-templates/index.html: The main webpage that serves as an input form where users can enter their academic data, such as marks and exam scores, to make a prediction.
+put index.html and result.html in templates folder
 
-templates/result.html: This page displays the prediction result to the user, showing which college they are most likely to be admitted to based on the provided data.
+index.html: The main webpage that serves as an input form where users can enter their academic data, such as marks and exam scores, to make a prediction.
+result.html: This page displays the prediction result to the user, showing which college they are most likely to be admitted to based on the provided data.
 
